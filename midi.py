@@ -117,7 +117,6 @@ def generate_notes():
     # choose pitch classes
     pitch_class_ids = random.sample(range(12), num_notes)
     pitches = [random.choice(get_pitches_in_range(pitch, RANGE_MIN, RANGE_MAX)) for pitch in pitch_class_ids]
-    notes = [KEYS[idx] for idx in sorted(pitch_class_ids)]
 
     # turn pitches into "progression" tuple
     pitches.sort()
@@ -128,7 +127,7 @@ def generate_notes():
     mid = generate_meta_midi(NOTES_TEMPO, 0)
     mid = progression_to_midi(mid, [tuple(progression)], starting_note)
 
-    return notes, mid
+    return pitch_class_ids, mid
 
 
 def get_pitches_in_range(pitch, min, max):

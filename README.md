@@ -1,4 +1,4 @@
-# Lotta-Sound
+# Fully-Tuned
 
 You know the drill. `cd` into the directory, and then:
 ```
